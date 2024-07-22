@@ -6,26 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#4b5563" />
-  <title>AI Workout Assistant with Pose Detection and Repetitions Counter</title>
-  <meta name="title" content="AI Workout Assistant with Pose Detection and Repetitions Counter" />
-  <meta name="description"
-    content="AI-based web application with pose detection, pose classification, and repetitions counter to help everyone do Workout like push up or squats whenever and wherever." />
-  <meta name="keywords"
-    content="Pose Detection, Pose Classification, Workout Counter, Workout Tracking, Artificial Intelligence" />
-  <meta name="author" content="Mochammad Galang Rivaldo" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://aiworkout.live/" />
-  <meta property="og:title" content="AI Workout Assistant with Pose Detection and Repetitions Counter" />
-  <meta property="og:description"
-    content="AI-based web application with pose detection, pose classification, and repetitions counter to help everyone do Workout like push up or squats whenever and wherever." />
-  <meta property="og:image" content="./img/social-media-thumbnail.png" />
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://aiworkout.live/" />
-  <meta property="twitter:title" content="AI Workout Assistant with Pose Detection and Repetitions Counter" />
-  <meta property="twitter:description"
-    content="AI-based web application with pose detection, pose classification, and repetitions counter to help everyone do Workout like push up or squats whenever and wherever." />
-  <meta property="twitter:image" content="./img/social-media-thumbnail.png" />
+  <title>Body Weight Exercise</title>
   <link rel="stylesheet" href="./stylesheets/output.css?v=1.0.1" />
   <link rel="stylesheet" href="./stylesheets/custom.css?v=1.0.1" />
   <link rel="icon" type="image/x-icon" href="./img/favicon.svg" />
@@ -46,7 +27,7 @@
       class="flex flex-col items-center max-w-sm w-full bg-white max-h-96 h-full shadow-md p-3 rounded-lg text-gray-500">
       <div class="flex-1 flex flex-col overflow-y-auto h-full items-center w-full">
         <h1 class="font-bold text-2xl my-3">Allow Camera Access</h1><img src="./img/undraw_taking_selfie_re_wlgd.svg"
-          alt="Ilustration of Workout" class="w-1/2 mb-3" />
+          alt="Ilustration of Exercise" class="w-1/2 mb-3" />
         <p class="text-center text-sm px-5">Please provide us access to your camera, which is required for Pose Detector
         </p>
       </div>
@@ -64,7 +45,7 @@
       <div class="flex flex-row items-center w-full font-bold">
         <div id="segSettingsWOBtn"
           class="w-1/2 text-center bg-amber-300 p-2 text-gray-600 hover:bg-amber-300 cursor-pointer hover:text-gray-600">
-          Workout</div>
+          Exercise</div>
         <div id="segSettingsAdvBtn"
           class="w-1/2 text-center bg-amber-200 p-2 text-gray-400 hover:bg-amber-300 cursor-pointer hover:text-gray-600">
           Advance</div>
@@ -143,26 +124,26 @@
       </div>
       <div id="bodyHowToUseBox"
         class="w-full p-3 flex-1 overflow-y-auto h-full text-sm font-medium flex flex-col items-center text-justify text-gray-600">
-        <p class="mb-3">Choose the type of workout and duration, you can change these later via the settings menu.</p>
-        <img class="w-1/3 mb-3" src="./img/undraw_choose_re_7d5a.svg" alt="Choose Workout and Duration" />
-        <p class="mb-3">Press start button to start, and immediately prepare yourself to do the workout.</p><img
+        <p class="mb-3">Choose the type of Exercise and duration, you can change these later via the settings menu.</p>
+        <img class="w-1/3 mb-3" src="./img/undraw_choose_re_7d5a.svg" alt="Choose Exercise and Duration" />
+        <p class="mb-3">Press start button to start, and immediately prepare yourself to do the Exercise.</p><img
           class="w-1/3 mb-3" src="./img/undraw_press_play_re_85bj.svg" alt="Press Start" />
         <p class="mb-3">Try to get optimal score (repetition) with proper technique and enjoy!</p><img
-          class="w-1/3 mb-2" src="./img/undraw_workout_gcgu.svg" alt="Doing Workout" />
+          class="w-1/3 mb-2" src="./img/undraw_Exercise_gcgu.svg" alt="Doing Exercise" />
       </div>
       <div id="bodyAboutBox"
         class="w-full p-3 flex-1 overflow-y-auto h-full text-xs font-medium flex flex-col items-center text-justify text-gray-600"
         style="display: none">
-        <h1 class="text-sm mb-1.5">AI Workout Assistant</h1>
-        <p class="mb-3">An web application to help everyone do workout wherever and whenever. Supported by the pose
+        <h1 class="text-sm mb-1.5">AI Exercise Assistant</h1>
+        <p class="mb-3">An web application to help everyone do Exercise wherever and whenever. Supported by the pose
           detector feature to analyze every pose and auto count the number of repetitions made. So, let's create a
-          healthy life by do workout every day!</p>
+          healthy life by do Exercise every day!</p>
         <h1 class="text-sm mb-1.5">How it Work?</h1>
         <p class="mb-3">Image data which is obtained from video or webcam will be processed by pose detector using the
           MoveNet model to generate keypoints. Keypoints are used for repetition calculations and input for classifying
-          workout types with Dense Neural Network (DNN) model.</p>
+          Exercise types with Dense Neural Network (DNN) model.</p>
         <h1 class="text-sm mb-1.5">Privacy Protection</h1>
-        <p class="mb-3">Pose Detector and Classification in the AI Workout Assistant application fully runs on the
+        <p class="mb-3">Pose Detector and Classification in the AI Exercise Assistant application fully runs on the
           Client side, so no image data comes out of the user's device. Videos or images processed by the program will
           be automatically deleted.</p>
         <h1 class="text-sm mb-1.5">Learn More</h1>
@@ -178,7 +159,7 @@
     </div>
   </div>
   <div class="flex flex-row bg-gray-600 w-full h-screen justify-center items-center">
-    <div id="parentWebcamBox" class="w-full bg-blue-200 rounded-lg shadow-2xl relative overflow-hidden"
+    <div id="parentWebcamBox" class="w-full bg-yellow-500 rounded-lg shadow-2xl relative overflow-hidden"
       style="max-width: 1280px; max-height: 720px"><video id="webcamBox" class="bg-gray-200 z-10" muted
         style="max-width: 1280px; max-height: 720px"></video><canvas id="cnvPoseBox" class="absolute inset-0 z-20"
         width="640" height="360"></canvas>
@@ -259,7 +240,7 @@
                   <div>Record Keypoints</div>
                 </div>
               </div>
-              <div class="text-yellow-500 font-medium" style="writing-mode: vertical-rl;
+              <div class="text-blue-200 font-medium" style="writing-mode: vertical-rl;
                     text-shadow: #000 0px 0px 2px;">Developer Mode</div>
             </div>
           </div>

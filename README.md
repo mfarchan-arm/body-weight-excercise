@@ -1,14 +1,14 @@
 ![example workflow](https://github.com/mfarchan-arm/body-weight-excercise/actions/workflows/azure-static-web-apps-agreeable-stone-079552c10.yml/badge.svg)
-# AI Workout Assistant
+# Exercise Assistant
 An web application to help everyone do workout wherever and whenever. Supported by the pose detector feature to analyze every pose and auto count the number of repetitions made. So, let's create a healthy life by do workout every day!
 
-![AI Workout Assistant Thumbnail](./public/img/social-media-thumbnail.png)
+![Exercise Assistant Thumbnail](./public/img/social-media-thumbnail.png)
 
-Pose Detector and Classification in the AI Workout Assistant application fully runs on the Client side, so no image data comes out of the user's device. Videos or images processed by the program will be automatically deleted.
+Pose Detector and Classification in the Exercise Assistant application fully runs on the Client side, so no image data comes out of the user's device. Videos or images processed by the program will be automatically deleted.
 ## How it Work
 Image data which is obtained from video or webcam will be processed by pose detector using the MoveNet model to generate keypoints. Keypoints are used for repetition calculations and input for classifying workout types with Dense Neural Network (DNN) model.
 
-![How AI Workout Work](./public/img/how-it-work-ai-workout.png)
+![How Exercise Work](./public/img/how-it-work-ai-workout.png)
 
 ## How to Run Locally
 - Prerequisites: you'll need to have [Git](https://git-scm.com/), [Node](https://nodejs.org/), and [NPM](https://www.npmjs.com/package/npm) installed and running on your machine.
@@ -28,7 +28,7 @@ Image data which is obtained from video or webcam will be processed by pose dete
 - Then open http://localhost:8080 to see your app.
 
 ## Generate Your Own Workout
-1) Open app locally or visit [aiworkout.live](https://aiworkout.live/)
+1) Open app locally
 2) Collect dataset (keypoints):  
     - Using webcam (open settings menu => turn on `Developer Mode` => click `Record Keypoints` button then click again when finish recording)  
     **Note:** (1) The app only records keypoints while its playing and the result will be csv format; (2) The value of each keypoint always in resolution 640x360 (when use webcam only).

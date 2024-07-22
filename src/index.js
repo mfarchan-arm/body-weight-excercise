@@ -137,11 +137,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     let htmlChooseWO = "";
     htmlChooseWO += isSettings
       ? `
-      <div class="mb-3">What workout do you want?</div>
+      <div class="mb-3">What exercise do you want?</div>
       `
       : `
       <div class="flex-1 overflow-y-auto flex flex-col items-center w-full">
-        <h1 class="font-bold text-2xl mt-3 mb-5">AI Workout Assistant</h1>
+        <h1 class="font-bold text-2xl mt-3 mb-5">Exercise Assistant</h1>
         <div class="relative w-full flex flex-row justify-center items-center">
           <img
             src="./img/undraw_pilates_gpdb.svg"
