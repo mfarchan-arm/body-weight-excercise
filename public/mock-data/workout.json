@@ -8,7 +8,6 @@
     "isFullscreen": false,
     "isFlipCamera": false,
     "isDirectionSign": true,
-    "isDeveloperMode": false,
     "isAccessCamera": false
   }
 }

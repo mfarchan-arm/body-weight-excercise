@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const bodyAboutElem = document.getElementById("bodyAboutBox");
   const helpOKBtnElem = document.getElementById("helpOKBtn");
 
-  const developerModeElem = document.getElementById("developerModeBox");
+  // const developerModeElem = document.getElementById("developerModeBox");
   const imgDirectionSignElem = document.getElementById("imgDirectionSignBox");
   const goAdviceBtnElem = document.getElementById("goAdviceBtn");
   const adviceWrapElem = document.getElementById("adviceWrapBox");
@@ -567,10 +567,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       WOSettings.DBWOSettings.isDirectionSign !== undefined
         ? WOSettings.DBWOSettings.isDirectionSign
         : true; // Default setting Direction Sign
-    document.querySelector('input[name="settingsDMBox"]').checked =
-      WOSettings.DBWOSettings.isDeveloperMode !== undefined
-        ? WOSettings.DBWOSettings.isDeveloperMode
-        : false; // Default setting Developer Mode
+    // document.querySelector('input[name="settingsDMBox"]').checked =
+    //   WOSettings.DBWOSettings.isDeveloperMode !== undefined
+    //     ? WOSettings.DBWOSettings.isDeveloperMode
+    //     : false; // Default setting Developer Mode
   });
 
   const actionSettings = {
@@ -645,10 +645,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         imgDirectionSignElem.style.display = data ? "block" : "none";
       }
     },
-    isDeveloperMode: (data) => {
-      // Toggler to show developer mode element
-      developerModeElem.style.display = data ? "flex" : "none";
-    },
+    // isDeveloperMode: (data) => {
+    //   // Toggler to show developer mode element
+    //   developerModeElem.style.display = data ? "flex" : "none";
+    // },
   };
 
   saveSettingsBtnElem.addEventListener("click", () => {
@@ -671,9 +671,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const isDirectionSign = document.querySelector(
       'input[name="settingsDSBox"]'
     ).checked;
-    const isDeveloperMode = document.querySelector(
-      'input[name="settingsDMBox"]'
-    ).checked;
+    // const isDeveloperMode = document.querySelector(
+    //   'input[name="settingsDMBox"]'
+    // ).checked;
 
     // Send newest settings to check and get change
     WOSettings.change(
@@ -684,7 +684,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         isFullscreen,
         isFlipCamera,
         isDirectionSign,
-        isDeveloperMode,
+        // isDeveloperMode,
       },
       actionSettings
     );
@@ -717,7 +717,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Init and try to load localStorage data settings
         WOSettings.setup(data.settingsConfig, {
           isFlipCamera: actionSettings.isFlipCamera,
-          isDeveloperMode: actionSettings.isDeveloperMode,
+          // isDeveloperMode: actionSettings.isDeveloperMode,
         });
         if (
           WOSettings.isGetPrevSettings &&

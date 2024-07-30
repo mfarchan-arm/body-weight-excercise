@@ -12,10 +12,6 @@ module.exports = {
       template: "./src/template.html",
       filename: "dashboard.html",
     }),
-    new HtmlWebpackPlugin({
-      template: "./src/home.html",
-      filename: "home.html",
-    }),
   ],
   devServer: {
     watchFiles: ["./src/*.html"],
