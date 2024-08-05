@@ -64,6 +64,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   const pingRecordElem = document.getElementById("pingRecordBox");
   const restartBtnElem = document.getElementById("restartBtn");
 
+  const exampleWorkoutElem = document.getElementById("exampleWorkout");
+
   let isFirstPlay = true;
   let isWebcamSecPlay = false;
   let widthRealVideo = 640;
@@ -148,7 +150,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             alt="Ilustration of Workout"
             class="w-1/2"
           />
-          <div id="chooseHelpBtn" class="absolute top-0 bg-yellow-500 text-white font-bold py-1 px-2 rounded-lg cursor-pointer hover:bg-amber-500">Need Help ?</div>
+          <div id="chooseHelpBtn" class="absolute top-0 bg-blue-600 text-white font-bold py-1 px-2 rounded-lg cursor-pointer hover:bg-blue-600">Need Help ?</div>
         </div>
         <div class="mt-5 mb-3">What workout do you want?</div>
       `;
@@ -167,7 +169,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             type="radio"
             value="${data.slugWorkout[idx]}"
             name="${isSettings ? "settingsNameWO" : "chooseNameWO"}"
-            class="w-4 h-4 text-yellow-600"
+            class="w-4 h-4 text-blue-600"
             required
           />
           <span class="w-full py-4 ml-2 text-sm font-medium text-gray-600"
@@ -202,7 +204,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             type="radio"
             value="${duration}"
             name="${isSettings ? "settingsDurationWO" : "chooseDurationWO"}"
-            class="w-4 h-4 text-yellow-600"
+            class="w-4 h-4 text-blue-600"
             required
           />
           <span class="w-full py-4 ml-2 text-sm font-medium text-gray-600"
@@ -222,7 +224,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         <button
           id="submitWOBtn"
           type="submit"
-          class="w-full bg-yellow-500 text-white py-2 text-xl font-bold rounded-lg mb-2 mt-5 hover:bg-amber-500"
+          class="w-full bg-blue-600 text-white py-2 text-xl font-bold rounded-lg mb-2 mt-5 hover:bg-blue-600"
         >
           Next
         </button>
@@ -276,6 +278,21 @@ document.addEventListener("DOMContentLoaded", async () => {
         const title = `${data.rulesCountConfig.nameWorkout} - ${WOSettings.DBWOSettings.currDuration}`;
         titleWOElem.innerText = title;
         resultTitleElem.innerText = title;
+
+        const nameWorkoutElem = `${data.rulesCountConfig.nameWorkout}`;
+        if (nameWorkoutElem === "Push Up") {
+          exampleWorkoutElem.classList.remove('hidden');
+          exampleWorkoutElem.setAttribute('data', './img/pushup.svg');
+        } else if (nameWorkoutElem === "Sit Up") {
+          exampleWorkoutElem.classList.remove('hidden');
+          exampleWorkoutElem.setAttribute('data', './img/situp.svg');
+        }else if (nameWorkoutElem === "Squat") {
+          exampleWorkoutElem.classList.remove('hidden');
+          exampleWorkoutElem.setAttribute('data', './img/squat.svg');
+        }else if (nameWorkoutElem === "Jumping Jacks") {
+          exampleWorkoutElem.classList.remove('hidden');
+          exampleWorkoutElem.setAttribute('data', './img/jack.svg');
+        }
 
         // Setup timer to first play
         WOTimer.remove();
@@ -337,20 +354,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (bodyHowToUseElem.style.display !== "none") return;
     bodyAboutElem.style.display = "none";
     bodyHowToUseElem.style.display = "flex";
-    segAboutBtnElem.classList.remove("bg-amber-300", "text-gray-600");
-    segAboutBtnElem.classList.add("bg-amber-200", "text-gray-400");
-    segHowToUseBtnElem.classList.remove("bg-amber-200", "text-gray-400");
-    segHowToUseBtnElem.classList.add("bg-amber-300", "text-gray-600");
+    segAboutBtnElem.classList.remove("bg-blue-600", "text-white");
+    segAboutBtnElem.classList.add("bg-blue-600", "text-white");
+    segHowToUseBtnElem.classList.remove("bg-blue-600", "text-white");
+    segHowToUseBtnElem.classList.add("bg-blue-600", "text-white");
   });
 
   segAboutBtnElem.addEventListener("click", () => {
     if (bodyAboutElem.style.display !== "none") return;
     bodyHowToUseElem.style.display = "none";
     bodyAboutElem.style.display = "flex";
-    segHowToUseBtnElem.classList.remove("bg-amber-300", "text-gray-600");
-    segHowToUseBtnElem.classList.add("bg-amber-200", "text-gray-400");
-    segAboutBtnElem.classList.remove("bg-amber-200", "text-gray-400");
-    segAboutBtnElem.classList.add("bg-amber-300", "text-gray-600");
+    segHowToUseBtnElem.classList.remove("bg-blue-600", "text-white");
+    segHowToUseBtnElem.classList.add("bg-blue-600", "text-white");
+    segAboutBtnElem.classList.remove("bg-blue-600", "text-white");
+    segAboutBtnElem.classList.add("bg-blue-600", "text-white");
   });
 
   restartBtnElem.addEventListener("click", () => {
@@ -430,7 +447,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             class="flex flex-col w-full bg-white rounded-lg overflow-hidden shadow-sm"
           >
             <div
-              class="p-1 bg-yellow-400 text-center font-medium text-sm text-gray-500"
+              class="p-1 bg-blue-600 text-center font-medium text-sm text-white"
             >
               ${durationWO}
             </div>
@@ -466,7 +483,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     sortDBWOScore.forEach((data) => {
       htmlJourney += `
         <div
-          class="mb-3 w-full border-t-2 border-yellow-200 bg-white flex flex-row justify justify-between px-3 py-1.5"
+          class="mb-3 w-full border-t-2 border-blue-200 bg-white flex flex-row justify justify-between px-3 py-1.5"
         >
           <div class="flex flex-col items-start justify-between">
             <div class="flex flex-row items-center">
@@ -502,10 +519,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (bodyJourneyElem.style.display !== "none") return;
     bodyBestScoreElem.style.display = "none";
     bodyJourneyElem.style.display = "block";
-    segBestBtnElem.classList.remove("bg-amber-300", "text-gray-600");
-    segBestBtnElem.classList.add("bg-amber-200", "text-gray-400");
-    segJourneyBtnElem.classList.remove("bg-amber-200", "text-gray-400");
-    segJourneyBtnElem.classList.add("bg-amber-300", "text-gray-600");
+    segBestBtnElem.classList.remove("bg-blue-600", "text-white");
+    segBestBtnElem.classList.add("bg-blue-600", "text-white");
+    segJourneyBtnElem.classList.remove("bg-blue-600", "text-white");
+    segJourneyBtnElem.classList.add("bg-blue-600", "text-white");
   });
 
   segBestBtnElem.addEventListener("click", () => {
@@ -513,10 +530,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (bodyBestScoreElem.style.display !== "none") return;
     bodyJourneyElem.style.display = "none";
     bodyBestScoreElem.style.display = "block";
-    segJourneyBtnElem.classList.remove("bg-amber-300", "text-gray-600");
-    segJourneyBtnElem.classList.add("bg-amber-200", "text-gray-400");
-    segBestBtnElem.classList.remove("bg-amber-200", "text-gray-400");
-    segBestBtnElem.classList.add("bg-amber-300", "text-gray-600");
+    segJourneyBtnElem.classList.remove("bg-blue-600", "text-white");
+    segJourneyBtnElem.classList.add("bg-blue-600", "text-white");
+    segBestBtnElem.classList.remove("bg-blue-600", "text-white");
+    segBestBtnElem.classList.add("bg-blue-600", "text-white");
   });
 
   segSettingsWOBtnElem.addEventListener("click", () => {
@@ -524,10 +541,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (bodySettingsWOElem.style.display !== "none") return;
     bodySettingsAdvElem.style.display = "none";
     bodySettingsWOElem.style.display = "block";
-    segSettingsAdvBtnElem.classList.remove("bg-amber-300", "text-gray-600");
-    segSettingsAdvBtnElem.classList.add("bg-amber-200", "text-gray-400");
-    segSettingsWOBtnElem.classList.remove("bg-amber-200", "text-gray-400");
-    segSettingsWOBtnElem.classList.add("bg-amber-300", "text-gray-600");
+    segSettingsAdvBtnElem.classList.remove("bg-blue-600", "text-white");
+    segSettingsAdvBtnElem.classList.add("bg-blue-600", "text-white");
+    segSettingsWOBtnElem.classList.remove("bg-blue-600", "text-white");
+    segSettingsWOBtnElem.classList.add("bg-blue-600", "text-white");
   });
 
   segSettingsAdvBtnElem.addEventListener("click", () => {
@@ -535,10 +552,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (bodySettingsAdvElem.style.display !== "none") return;
     bodySettingsWOElem.style.display = "none";
     bodySettingsAdvElem.style.display = "block";
-    segSettingsWOBtnElem.classList.remove("bg-amber-300", "text-gray-600");
-    segSettingsWOBtnElem.classList.add("bg-amber-200", "text-gray-400");
-    segSettingsAdvBtnElem.classList.remove("bg-amber-200", "text-gray-400");
-    segSettingsAdvBtnElem.classList.add("bg-amber-300", "text-gray-600");
+    segSettingsWOBtnElem.classList.remove("bg-blue-600", "text-white");
+    segSettingsWOBtnElem.classList.add("bg-blue-600", "text-white");
+    segSettingsAdvBtnElem.classList.remove("bg-blue-600", "text-white");
+    segSettingsAdvBtnElem.classList.add("bg-blue-600", "text-white");
   });
 
   settingsBtnElem.addEventListener("click", () => {
