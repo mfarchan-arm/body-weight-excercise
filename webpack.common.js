@@ -18,7 +18,7 @@ module.exports = {
     port: 8080,
     open: true,
     hot: true,
-    disableHostCheck: true,
+    allowedHosts: ['all'],
     client: {
       overlay: {
         errors: true,
